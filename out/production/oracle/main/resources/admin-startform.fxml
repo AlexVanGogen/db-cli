@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="900.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="forms.AdminController">
+   <children>
+      <MenuBar layoutY="7.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="Journal">
+            <items>
+              <Menu mnemonicParsing="false" text="Show">
+              <items>
+                <MenuItem fx:id="show_all_trips" mnemonicParsing="false" onAction="#onShowAllTrips" text="All possible trips" />
+                <MenuItem fx:id="show_unfinished_trips" mnemonicParsing="false" onAction="#onShowUnfinishedTrips" text="Only unfinished trips" />
+              </items>
+              </Menu>
+              <MenuItem mnemonicParsing="false" text="Send to a trip" onAction="#onSendToTrip"/>
+              <MenuItem mnemonicParsing="false" text="Verify arriving" onAction="#onVerifyArriving"/>
+              <Menu mnemonicParsing="false" text="Other">
+                <items>
+                  <MenuItem text="Best time on selected route" mnemonicParsing="false" onAction="#onBestTimeOnRoute"/>
+                </items>
+              </Menu>
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+     <TableView fx:id="journaltable" layoutY="39.0" prefHeight="861.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+       <columns>
+         <TableColumn fx:id="journalCarCol" prefWidth="189.0" text="Car" />
+         <TableColumn fx:id="journalRouteCol" minWidth="0.0" prefWidth="409.0" text="Route" />
+         <TableColumn fx:id="journalDeriveCol" minWidth="0.0" prefWidth="201.0" text="Derive" />
+         <TableColumn fx:id="journalArriveCol" minWidth="0.0" prefWidth="200.0" text="Arrive" />
+       </columns>
+     </TableView>
+   </children>
+
+
+
+</AnchorPane>
