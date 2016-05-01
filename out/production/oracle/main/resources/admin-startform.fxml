@@ -21,18 +21,25 @@
               <Menu mnemonicParsing="false" text="Other">
                 <items>
                   <MenuItem text="Best time on selected route" mnemonicParsing="false" onAction="#onBestTimeOnRoute"/>
+                  <MenuItem text="Cars on selected route" mnemonicParsing="false" onAction="#onCarsOnRoute"/>
                 </items>
               </Menu>
             </items>
           </Menu>
-          <Menu mnemonicParsing="false" text="Edit">
+          <Menu mnemonicParsing="false" text="Personnel">
             <items>
-              <MenuItem mnemonicParsing="false" text="Delete" />
+              <MenuItem text="Show" mnemonicParsing="false" onAction="#onShowPersonnel"/>
+              <MenuItem text="Add" mnemonicParsing="false" onAction="#onAddPersonnel" />
+              <MenuItem text="Edit" mnemonicParsing="false" onAction="#onEditPersonnel" />
+              <MenuItem text="Delete" mnemonicParsing="false" onAction="#onDeletePersonnel" />
             </items>
           </Menu>
-          <Menu mnemonicParsing="false" text="Help">
+          <Menu mnemonicParsing="false" text="Auto">
             <items>
-              <MenuItem mnemonicParsing="false" text="About" />
+              <MenuItem text="Show" mnemonicParsing="false" onAction="#onShowAuto"/>
+              <MenuItem text="Add" mnemonicParsing="false" onAction="#onAddAuto" />
+              <MenuItem text="Edit" mnemonicParsing="false" onAction="#onEditAuto" />
+              <MenuItem text="Delete" mnemonicParsing="false" onAction="#onDeleteAuto" />
             </items>
           </Menu>
         </menus>

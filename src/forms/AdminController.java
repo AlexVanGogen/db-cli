@@ -29,12 +29,10 @@ import java.sql.SQLException;
  */
 public class AdminController {
     @FXML private TableView<Journal> journaltable;
-    @FXML private Menu menuJournal;
     @FXML private TableColumn<Journal, String> journalCarCol;
     @FXML private TableColumn<Journal, String> journalRouteCol;
     @FXML private TableColumn<Journal, String> journalDeriveCol;
     @FXML private TableColumn<Journal, String> journalArriveCol;
-    private Scene scene;
 
     private PreparedStatement queryStmt = null;
     private ResultSet rs;
@@ -123,5 +121,123 @@ public class AdminController {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+
+    public void onCarsOnRoute(ActionEvent actionEvent) {
+        Stage stage = new Stage();
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("../main/resources/modal/cars-on-route.fxml"));
+            stage.setTitle("Get the number of cars on selected route");
+            stage.setMaxHeight(159);
+            stage.setMaxWidth(488);
+            stage.setResizable(false);
+            stage.setScene(new Scene(root));
+            stage.initModality(Modality.WINDOW_MODAL);
+            stage.initOwner(journaltable.getScene().getWindow());
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void onAddPersonnel(ActionEvent actionEvent) {
+        Stage stage = new Stage();
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("../main/resources/modal/personnel/add.fxml"));
+            stage.setTitle("Add person");
+            stage.setMaxHeight(219);
+            stage.setMaxWidth(600);
+            stage.setResizable(false);
+            stage.setScene(new Scene(root));
+            stage.initModality(Modality.WINDOW_MODAL);
+            stage.initOwner(journaltable.getScene().getWindow());
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void onEditPersonnel(ActionEvent actionEvent) {
+        Stage stage = new Stage();
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("../main/resources/modal/personnel/edit.fxml"));
+            stage.setTitle("Edit person");
+            stage.setResizable(false);
+            stage.setScene(new Scene(root));
+            stage.initModality(Modality.WINDOW_MODAL);
+            stage.initOwner(journaltable.getScene().getWindow());
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void onDeletePersonnel(ActionEvent actionEvent) {
+        Stage stage = new Stage();
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("../main/resources/modal/personnel/delete.fxml"));
+            stage.setTitle("Delete person");
+            stage.setResizable(false);
+            stage.setScene(new Scene(root));
+            stage.initModality(Modality.WINDOW_MODAL);
+            stage.initOwner(journaltable.getScene().getWindow());
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void onShowPersonnel(ActionEvent actionEvent) {
+        Stage stage = new Stage();
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("../main/resources/table/personnel.fxml"));
+            stage.setTitle("Personnel");
+            stage.setResizable(false);
+            stage.setScene(new Scene(root));
+            stage.initModality(Modality.WINDOW_MODAL);
+            stage.initOwner(journaltable.getScene().getWindow());
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void onShowAuto(ActionEvent actionEvent) {
+        Stage stage = new Stage();
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("../main/resources/table/auto.fxml"));
+            stage.setTitle("Cars");
+            stage.setResizable(false);
+            stage.setScene(new Scene(root));
+            stage.initModality(Modality.WINDOW_MODAL);
+            stage.initOwner(journaltable.getScene().getWindow());
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void onAddAuto(ActionEvent actionEvent) {
+        Stage stage = new Stage();
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("../main/resources/modal/auto/add.fxml"));
+            stage.setTitle("Add person");
+            stage.setMaxHeight(298);
+            stage.setMaxWidth(535);
+            stage.setResizable(false);
+            stage.setScene(new Scene(root));
+            stage.initModality(Modality.WINDOW_MODAL);
+            stage.initOwner(journaltable.getScene().getWindow());
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void onEditAuto(ActionEvent actionEvent) {
+    }
+
+    public void onDeleteAuto(ActionEvent actionEvent) {
     }
 }

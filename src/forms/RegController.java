@@ -1,6 +1,7 @@
 package forms;
 
 import forms.Main;
+import global.Checker;
 import global.Vars;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
@@ -40,16 +41,14 @@ public class RegController  {
     String encodedpwd;
     ResultSet rs;
 
-    public boolean checkForValidity(String u, String p) {
-        return (u.matches("[a-zA-Z]+[0-9]*") && p != null);
-    }
+
 
     public boolean prepareHandling() {
         uname = new SimpleStringProperty(unametf.getText());
         passwd = new SimpleStringProperty(pwdtf.getText());
         uname = new SimpleStringProperty("Nagibator99");
         passwd = new SimpleStringProperty("lyambda");
-        if (!checkForValidity(uname.get(), passwd.get())) {
+        if (!Checker.checkPasswordForValidity(uname.get(), passwd.get())) {
             logerrlabel.setText("Username or password field has illegal symbols.");
             return false;
         }
