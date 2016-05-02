@@ -9,12 +9,14 @@ public class Auto {
     private String mark;
     private String color;
     private String owner;
+    private boolean onTrip;
 
     public Auto(String code, String mark, String color, String owner) {
         this.code = code;
         this.mark = mark;
         this.color = color;
         this.owner = owner;
+        this.onTrip = false;
     }
 
     public Auto(String id, String code, String mark, String color, String owner) {
@@ -23,6 +25,7 @@ public class Auto {
         this.mark = mark;
         this.color = color;
         this.owner = owner;
+        this.onTrip = false;
     }
 
     public String getId() {
@@ -63,5 +66,13 @@ public class Auto {
 
     public void setOwner(String owner) {
         this.owner = owner;
+    }
+
+    public boolean isOnTrip() {
+        return onTrip;
+    }
+
+    public void setOnTrip(boolean onTrip) {
+        this.onTrip = onTrip;
     }
 }

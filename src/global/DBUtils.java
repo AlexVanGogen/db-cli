@@ -26,4 +26,15 @@ public class DBUtils {
         }
         return data;
     }
+    public static void executeDeletionById(String query, String id) {
+        ResultSet rs;
+        try {
+            PreparedStatement stmt = Vars.con.prepareStatement(query);
+            stmt.setString(1, id);
+            rs = stmt.executeQuery();
+            Alerts.info(null, "Deleting was successful.");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 }

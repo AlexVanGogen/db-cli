@@ -46,8 +46,6 @@ public class RegController  {
     public boolean prepareHandling() {
         uname = new SimpleStringProperty(unametf.getText());
         passwd = new SimpleStringProperty(pwdtf.getText());
-        uname = new SimpleStringProperty("Nagibator99");
-        passwd = new SimpleStringProperty("lyambda");
         if (!Checker.checkPasswordForValidity(uname.get(), passwd.get())) {
             logerrlabel.setText("Username or password field has illegal symbols.");
             return false;

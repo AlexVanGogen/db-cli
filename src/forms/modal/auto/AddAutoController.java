@@ -45,6 +45,7 @@ public class AddAutoController {
     }
 
     public void onAddAuto(ActionEvent actionEvent) {
+        boolean ok = true;
         String code = addAutoCode.getText();
         if (!Checker.checkNewAutoCode(code))
             Alerts.error(null, "Incorrect format of code");
@@ -56,14 +57,18 @@ public class AddAutoController {
                 stmt.setString(2, addAutoColor.getValue());
                 stmt.setString(3, addAutoMark.getValue());
                 stmt.setString(4, getPersonnelId(addAutoOwner.getValue()));
-                rs = stmt.executeQuery();
-                Alerts.info(null, "Adding was successful.");
+                try {
+                    rs = stmt.executeQuery();
+                } catch (SQLException e) {
+                    Alerts.error(null, "Car with this code already exists.");
+                    ok = false;
+                }
             } catch (SQLException e) {
                 e.printStackTrace();
             }
+            if (ok) Alerts.info(null, "Adding was successful.");
         }
     }
-
 
     public String getPersonnelId(String data) {
         String[] personData = data.split(" ");

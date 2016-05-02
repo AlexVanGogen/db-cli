@@ -3,6 +3,7 @@ package forms.modal.personnel;
 import database.types.Personnel;
 import global.Alerts;
 import global.Checker;
+import global.DBUtils;
 import global.Vars;
 import global.struct.CyclicList;
 import javafx.event.ActionEvent;
@@ -49,14 +50,7 @@ public class DeletePersonController {
     public void onDeletePerson(ActionEvent actionEvent) {
         String id = perDeleteID.getText();
         String query = "delete from auto_personnel where id = ?";
-        try {
-            queryStmt = Vars.con.prepareStatement(query);
-            queryStmt.setString(1, id);
-            rs = queryStmt.executeQuery();
-            Alerts.info(null, "Deleting was successful.");
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+        DBUtils.executeDeletionById(query, id);
     }
 
     public void onDeletePersonnelPrev(ActionEvent actionEvent) {

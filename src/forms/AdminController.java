@@ -163,6 +163,7 @@ public class AdminController {
         try {
             Parent root = FXMLLoader.load(getClass().getResource("../main/resources/modal/personnel/edit.fxml"));
             stage.setTitle("Edit person");
+            stage.setMaxWidth(600);
             stage.setResizable(false);
             stage.setScene(new Scene(root));
             stage.initModality(Modality.WINDOW_MODAL);
@@ -178,6 +179,7 @@ public class AdminController {
         try {
             Parent root = FXMLLoader.load(getClass().getResource("../main/resources/modal/personnel/delete.fxml"));
             stage.setTitle("Delete person");
+            stage.setMaxWidth(600);
             stage.setResizable(false);
             stage.setScene(new Scene(root));
             stage.initModality(Modality.WINDOW_MODAL);
@@ -222,7 +224,7 @@ public class AdminController {
         Stage stage = new Stage();
         try {
             Parent root = FXMLLoader.load(getClass().getResource("../main/resources/modal/auto/add.fxml"));
-            stage.setTitle("Add person");
+            stage.setTitle("Add car");
             stage.setMaxHeight(298);
             stage.setMaxWidth(535);
             stage.setResizable(false);
@@ -236,8 +238,98 @@ public class AdminController {
     }
 
     public void onEditAuto(ActionEvent actionEvent) {
+        Stage stage = new Stage();
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("../main/resources/modal/auto/edit.fxml"));
+            stage.setTitle("Edit car");
+            stage.setMaxHeight(500);
+            stage.setMaxWidth(600);
+            stage.setResizable(false);
+            stage.setScene(new Scene(root));
+            stage.initModality(Modality.WINDOW_MODAL);
+            stage.initOwner(journaltable.getScene().getWindow());
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public void onDeleteAuto(ActionEvent actionEvent) {
+        Stage stage = new Stage();
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("../main/resources/modal/auto/delete.fxml"));
+            stage.setTitle("Delete car");
+            stage.setMaxHeight(500);
+            stage.setMaxWidth(600);
+            stage.setResizable(false);
+            stage.setScene(new Scene(root));
+            stage.initModality(Modality.WINDOW_MODAL);
+            stage.initOwner(journaltable.getScene().getWindow());
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void onShowRoutes(ActionEvent actionEvent) {
+        Stage stage = new Stage();
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("../main/resources/table/routes.fxml"));
+            stage.setTitle("Routes");
+            stage.setResizable(false);
+            stage.setScene(new Scene(root));
+            stage.initModality(Modality.WINDOW_MODAL);
+            stage.initOwner(journaltable.getScene().getWindow());
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void onAddRoutes(ActionEvent actionEvent) {
+        Stage stage = new Stage();
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("../main/resources/modal/routes/add.fxml"));
+            stage.setTitle("Add route");
+            stage.setResizable(false);
+            stage.setScene(new Scene(root));
+            stage.initModality(Modality.WINDOW_MODAL);
+            stage.initOwner(journaltable.getScene().getWindow());
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void onEditRoutes(ActionEvent actionEvent) {
+        Stage stage = new Stage();
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("../main/resources/modal/routes/edit.fxml"));
+            stage.setTitle("Edit route");
+            stage.setMaxWidth(600);
+            stage.setResizable(false);
+            stage.setScene(new Scene(root));
+            stage.initModality(Modality.WINDOW_MODAL);
+            stage.initOwner(journaltable.getScene().getWindow());
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void onDeleteRoutes(ActionEvent actionEvent) {
+        Stage stage = new Stage();
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("../main/resources/modal/routes/delete.fxml"));
+            stage.setTitle("Delete route");
+            stage.setMaxWidth(600);
+            stage.setResizable(false);
+            stage.setScene(new Scene(root));
+            stage.initModality(Modality.WINDOW_MODAL);
+            stage.initOwner(journaltable.getScene().getWindow());
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

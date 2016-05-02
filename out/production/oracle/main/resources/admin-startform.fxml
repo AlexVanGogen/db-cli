@@ -42,6 +42,14 @@
               <MenuItem text="Delete" mnemonicParsing="false" onAction="#onDeleteAuto" />
             </items>
           </Menu>
+          <Menu mnemonicParsing="false" text="Routes">
+            <items>
+              <MenuItem text="Show" mnemonicParsing="false" onAction="#onShowRoutes"/>
+              <MenuItem text="Add" mnemonicParsing="false" onAction="#onAddRoutes" />
+              <MenuItem text="Edit" mnemonicParsing="false" onAction="#onEditRoutes" />
+              <MenuItem text="Delete" mnemonicParsing="false" onAction="#onDeleteRoutes" />
+            </items>
+          </Menu>
         </menus>
       </MenuBar>
      <TableView fx:id="journaltable" layoutY="39.0" prefHeight="861.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
